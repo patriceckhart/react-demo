@@ -1,0 +1,24 @@
+Neos:
+  Flow:
+    mvc:
+      routes:
+        'React.Demo': true
+
+# package specific configuration (navigation)
+React:
+  Demo:
+    Ui:
+      navigation:
+        groups:
+          dashboard:
+            label: Dashboard
+            icon: fas fa-tachometer-alt
+        items:
+          foo:
+            label: Foo
+            icon: fas fa-heart
+            group: dashboard
+          bar:
+            label: Bar
+            icon: fas fa-star
+            group: dashboard

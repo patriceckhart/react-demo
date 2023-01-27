@@ -1,0 +1,34 @@
+React.Demo.StageController.index = React.Demo:Stage
+
+prototype(React.Demo:Stage) < prototype(Neos.Fusion:Component) {
+    docType = ${'<!doctype html>'}
+    pageTitle = ${'React demo'}
+
+    head = false
+
+    data-dummy-image = Neos.Fusion:ResourceUri {
+        path = 'resource://Neos.Neos/Public/Images/dummy-image.svg'
+    }
+
+    data-csrf = ${Security.csrfToken()}
+    data-configuration = ${Configuration.setting(request.controllerPackageKey + '.Ui')}
+    data-configuration.@process.stringify = ${Json.stringify(value)}
+
+    renderer = afx`
+        {props.docType}
+        <html lang="de">
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title>{props.pageTitle}</title>
+            {props.head}
+            <link href={StaticResource.uri('React.Demo', 'Public/main.bundle.css')} rel="stylesheet" />
+        </head>
+        <body>
+            <div id="root" {...props}></div>
+            <script src={StaticResource.uri('React.Demo', 'Public/main.bundle.js')}></script>
+        </body>
+        </html>
+    `
+    @process.debugDump = Neos.Fusion:DebugDump
+}

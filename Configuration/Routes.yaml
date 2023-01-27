@@ -1,0 +1,9 @@
+-
+  name: 'stage route with optional dynamic path segment'
+  uriPattern: '(/{page})'
+  defaults:
+    '@controller': 'Stage'
+    '@package': 'React.Demo'
+    '@action': 'index'
+    '@format': 'html'
+    'page': 'null'
