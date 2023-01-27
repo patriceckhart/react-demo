@@ -28981,6 +28981,7 @@ class Test extends React.Component {
     } = this.state;
     return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h1", null, label), /*#__PURE__*/React.createElement("h2", null, headline2), children, /*#__PURE__*/React.createElement("button", {
       type: "button",
+      className: "btn btn-primary",
       onClick: () => this.handleClick()
     }, "Click!"));
   }
@@ -29050,7 +29051,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64596" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52234" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -27,7 +27,7 @@ class Test extends React.Component {
 				<h1>{label}</h1>
 				<h2>{headline2}</h2>
 				{children}
-				<button type="button" onClick={() => this.handleClick()} >Click!</button>
+				<button type="button" className="btn btn-primary" onClick={() => this.handleClick()} >Click!</button>
 			</Fragment>
         );
     }
