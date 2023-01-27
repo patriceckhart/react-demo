@@ -19,7 +19,7 @@ flow flow:package:rescan
 
 ## React app
 
-Open ```./Private/Resources/react-demo``` in cli and run
+Open ```./Resources/Private/react-demo``` in cli and run
 ```
 yarn
 ```
