@@ -7,11 +7,11 @@ const App = () => {
     return (
         <div className="App">
 
-            <p>App</p>
+            {/*<p>App</p>*/}
 
-			<div className="brand">
-				<img src={svgLogo} style={{width: '200px', height: 'auto'}} />
-			</div>
+			{/*<div className="brand">*/}
+			{/*	<img src={svgLogo} style={{width: '200px', height: 'auto'}} />*/}
+			{/*</div>*/}
 
 			<Test label="Foo">
 				<p>Children</p>

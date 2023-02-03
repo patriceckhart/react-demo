@@ -23,4 +23,12 @@ final class StageController extends ActionController
 
     }
 
+    public function testAction(array $name): void
+    {
+        $args = $this->request->getArguments();
+        \Neos\Flow\var_dump('foo');
+        \Neos\Flow\var_dump($args);
+        \Neos\Flow\var_dump($name);
+    }
+
 }

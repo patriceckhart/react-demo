@@ -7,3 +7,37 @@
     '@action': 'index'
     '@format': 'html'
     'page': 'null'
+
+-
+  name: 'test route'
+  uriPattern: 'test'
+  defaults:
+    '@controller': 'Stage'
+    '@package': 'React.Demo'
+    '@action': 'test'
+    '@format': 'html'
+
+-
+  name: 'test create'
+  uriPattern: 'api/test/create'
+  defaults:
+    '@controller': 'Api\Test'
+    '@package': 'React.Demo'
+    '@action': 'create'
+    '@format': 'json'
+-
+  name: 'test create'
+  uriPattern: 'api/test/update'
+  defaults:
+    '@controller': 'Api\Test'
+    '@package': 'React.Demo'
+    '@action': 'update'
+    '@format': 'json'
+-
+  name: 'test create'
+  uriPattern: 'api/test/getfirst'
+  defaults:
+    '@controller': 'Api\Test'
+    '@package': 'React.Demo'
+    '@action': 'getFirst'
+    '@format': 'json'

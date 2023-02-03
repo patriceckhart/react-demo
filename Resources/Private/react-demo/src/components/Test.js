@@ -1,33 +1,70 @@
 import * as React from "react";
 import {Fragment} from "react";
+import {Submit, Input, Form} from "../lib";
+import Loop from "../essentials/Loop/Loop";
+import FetchData from "../backend/FetchData";
+import Hidden from "../lib/Hidden/Hidden";
+import SelectOption from "../lib/Select/SelectOption";
+import Select from "../lib/Select/Select";
 
 class Test extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            headline2: 'hello'
-        };
-        this.handleClick = this.handleClick.bind(this);
+		this.state = {
+			item: false
+		}
+		this.submitForm = this.submitForm.bind(this);
+		this.getFirst = this.getFirst.bind(this);
     }
 
-    handleClick() {
-		console.log('click');
-		const headline2 = this.state.headline2;
-		this.setState({headline2: `${headline2} world`});
-    }
+	submitForm(e) {
 
-    render() {
+		FetchData('/api/test/update', 'POST', false, false, e.target, true).then(result => {
+			console.log(result);
+		});
+	}
 
-        const {label, children} = this.props;
-		const {headline2} = this.state;
+	getFirst() {
+
+		FetchData('/api/test/getfirst', 'GET').then(result => {
+			this.setState({item: result.result});
+		});
+	}
+
+	componentDidMount() {
+		this.getFirst();
+	}
+
+	render() {
+
+		const {item} = this.state;
 
         return (
 			<Fragment>
-				<h1>{label}</h1>
-				<h2>{headline2}</h2>
-				{children}
-				<button type="button" className="btn btn-primary" onClick={() => this.handleClick()} >Click!</button>
+
+
+				<Form action="test" name="form" attributes={{id: 'testForm'}} onSubmit={(p) => this.submitForm(p)} >
+
+					{item &&
+						<Hidden name="test[__identity]" defaultValue={`${item ? item.identifier : ``}`} />
+					}
+
+					<Input name="test[name]" attributes={{className: 'form-control', placeholder: 'Firstname'}} defaultValue={`${item ? item.name : ``}`} />
+
+					<Select name="test[foo]" attributes={{className: 'form-select'}} placeholder="Bitte auswählen" >
+						<SelectOption label="Foo" value="foo" />
+						<SelectOption label="Bar" value="bar" />
+						<SelectOption label="Bars" value="bars" />
+					</Select>
+
+					<Submit attributes={{className: 'btn btn-secondary'}} >
+						Submit form
+					</Submit>
+
+				</Form>
+
+
 			</Fragment>
         );
     }
