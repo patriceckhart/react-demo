@@ -30308,7 +30308,47 @@ Select.defaultProps = {
 };
 var _default = Select;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","./SelectOption":"lib/Select/SelectOption.js"}],"components/Test.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","./SelectOption":"lib/Select/SelectOption.js"}],"lib/TextArea/TextArea.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var React = _interopRequireWildcard(require("react"));
+var _propTypes = _interopRequireDefault(require("prop-types"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+class Textarea extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    const {
+      type,
+      name,
+      defaultValue,
+      attributes
+    } = this.props;
+    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("textarea", _extends({
+      name: name,
+      defaultValue: defaultValue
+    }, attributes)));
+  }
+}
+Textarea.propTypes = {
+  name: _propTypes.default.string,
+  defaultValue: _propTypes.default.string,
+  attributes: _propTypes.default.object
+};
+Textarea.defaultProps = {
+  defaultValue: ''
+};
+var _default = Textarea;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js"}],"components/Test.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30322,6 +30362,7 @@ var _FetchData = _interopRequireDefault(require("../backend/FetchData"));
 var _Hidden = _interopRequireDefault(require("../lib/Hidden/Hidden"));
 var _SelectOption = _interopRequireDefault(require("../lib/Select/SelectOption"));
 var _Select = _interopRequireDefault(require("../lib/Select/Select"));
+var _TextArea = _interopRequireDefault(require("../lib/TextArea/TextArea"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -30385,7 +30426,12 @@ class Test extends React.Component {
     }), /*#__PURE__*/React.createElement(_SelectOption.default, {
       label: "Bars",
       value: "bars"
-    })), /*#__PURE__*/React.createElement(_lib.Submit, {
+    })), /*#__PURE__*/React.createElement(_TextArea.default, {
+      attributes: {
+        className: 'form-control',
+        placeholder: 'Text'
+      }
+    }), /*#__PURE__*/React.createElement(_lib.Submit, {
       attributes: {
         className: 'btn btn-secondary'
       }
@@ -30394,7 +30440,7 @@ class Test extends React.Component {
 }
 var _default = Test;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","../lib":"lib/index.js","../essentials/Loop/Loop":"essentials/Loop/Loop.js","../backend/FetchData":"backend/FetchData.js","../lib/Hidden/Hidden":"lib/Hidden/Hidden.js","../lib/Select/SelectOption":"lib/Select/SelectOption.js","../lib/Select/Select":"lib/Select/Select.js"}],"App.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../lib":"lib/index.js","../essentials/Loop/Loop":"essentials/Loop/Loop.js","../backend/FetchData":"backend/FetchData.js","../lib/Hidden/Hidden":"lib/Hidden/Hidden.js","../lib/Select/SelectOption":"lib/Select/SelectOption.js","../lib/Select/Select":"lib/Select/Select.js","../lib/TextArea/TextArea":"lib/TextArea/TextArea.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

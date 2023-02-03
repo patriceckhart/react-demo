@@ -6,6 +6,7 @@ import FetchData from "../backend/FetchData";
 import Hidden from "../lib/Hidden/Hidden";
 import SelectOption from "../lib/Select/SelectOption";
 import Select from "../lib/Select/Select";
+import TextArea from "../lib/TextArea/TextArea";
 
 class Test extends React.Component {
 
@@ -57,6 +58,8 @@ class Test extends React.Component {
 						<SelectOption label="Bar" value="bar" />
 						<SelectOption label="Bars" value="bars" />
 					</Select>
+
+					<TextArea attributes={{className: 'form-control', placeholder: 'Text'}} />
 
 					<Submit attributes={{className: 'btn btn-secondary'}} >
 						Submit form
